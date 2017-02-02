@@ -8,8 +8,7 @@ class ViveController extends Component {
 
     let controller = null;
 
-    // Renders vive cursor if HMD is present
-    if(this.props.isHMD && this.props.hasCursor && !this.props.isMobile) {
+    if(this.props.devices.isHMD && this.props.hasCursor) {
       controller = (
         <Entity
           vive-controls={{hand: this.props.hand}}

@@ -21,25 +21,42 @@ class App extends Component {
         isMobile: false
       }
     };
-  };
+    this.enteredVR = this.enteredVR.bind(this);
+  }
 
   componentDidMount() {
+    
+    // Add listener to enter-vr button
+    document.querySelector('a-scene')
+            .addEventListener('enter-vr', this.enteredVR);
+  }
 
-    // Resets camera for HMDs
+  enteredVR() {
+    // Check for connected HMDs
     if(window.AFRAME.utils.device.checkHeadsetConnected()) {
+
+      // Set initial position in world and set HMD flag
       this.setState({
-        camera: {initialPos: "0 0 0"},
-        devices: {isHMD: true}
+        camera: {
+          initialPos: "0 0 0"
+        },
+        devices: {
+          isHMD: true
+        }
       });
     }
 
-    //
+    // Check whether we're on mobile
     if(window.AFRAME.utils.device.isMobile()) {
-      this.setState({devices: {isMobile: true}});
+
+      // Set mobile flag
+      this.setState({
+        devices: {
+          isMobile: true
+        }
+      });
     }
   }
-
-
 
   render() {
     return (
@@ -72,7 +89,6 @@ class App extends Component {
         <ViveController
           hand='right'
           devices={this.state.devices}
-          hasCursor
         />
       </Scene>
     );
