@@ -9,14 +9,20 @@ This demo is running at: [ia.pbutcher.uk/coloured-boxes](http://ia.pbutcher.uk/c
 
 ### Install
 
-```npm install```
+```
+npm install
+```
 
 ### Run in development mode
 
 Starts a development server at `localhost:3000`.  
 
-```npm start```
+```
+npm start
+```
 
 ### Build for production
 
-```npm build```
+```
+npm build
+```
