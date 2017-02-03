@@ -25,7 +25,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    
+
     // Add listener to enter-vr button
     document.querySelector('a-scene')
             .addEventListener('enter-vr', this.enteredVR);
@@ -49,8 +49,11 @@ class App extends Component {
     // Check whether we're on mobile
     if(window.AFRAME.utils.device.isMobile()) {
 
-      // Set mobile flag
+      // Set initial position in world and set mobile flag
       this.setState({
+        camera: {
+          initialPos: "0 1 0"
+        },
         devices: {
           isMobile: true
         }
