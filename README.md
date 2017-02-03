@@ -26,3 +26,5 @@ npm start
 ```
 npm build
 ```
+
+![Screenshot on Android](http://i.imgur.com/MYNk16H.png)
